@@ -1,0 +1,78 @@
+Goals of the assignment
+- workuing with files
+- building and using directives
+- designing functions using Design Recipe
+
+Background
+-- math and stats
+    - only required simple mathematical operations and finding ratios using division
+    - Pearson correlation for more advanced analysis
+        - correlation is a single coefficient expressing the tendency of one set of data to grow linearly(in the same or opposite direction) with another set of data.
+
+Dataset Descriptions
+1 - hypertension data(.cvs)
+    - Neighbourhood hypertension data files
+        - first row contain header information
+        - remaining contain data.
+2 - income Data(.cvs)
+    - Neighbourhood income data files
+        - first row contain header information
+        - remaining contain data.
+-- assume no comma instead of seperating values.
+-- also assume all files are in the correct formate.
+-- Neighbourhood names and IDs are the same between both data files, but their count may be different.
+
+The CityData Type
+    -- we have to write code to build and use a dictionary that contains hypertension and low income dta about neighbourhoods in the city.
+    -- formate should be a key value pair like 
+        {'key1 ': value1,
+        'key2 ': value2
+        .
+        .
+        .
+        'keyN' : valueN,
+        }
+        {'CityData' : {"id" : value,"hypertension" : [value1, value2, ...],"Total" : value,"local_income" : value},
+        {'CityData' : {"id" : value,"hypertension" : [value1, value2, ...],"Total" : value,"local_income" : value},
+        .
+        .
+        .
+        {'CityData' : {"id" : value,"hypertension" : [value1, value2, ...],"Total" : value,"local_income" : value}
+        }
+    where
+        id = (int) id
+        total = (int) total population given in the low income data file.
+        id = (int) number of people who are classified as low income.
+        id = (list[int]) hypertion_data_file[2 : 7] : length == 6.
+
+    Note low income data collected before hypertension data so total will be different in them, size of the neighbourhoods changed. We donot need to do anything about this.
+
+Age standerization
+-- read pdf for this part
+
+Required functions
+In a3.py, folow the function design recipe to complete the functions described below.
+- define helper function that will call some (not all) of the functions.
+- helper function require complete docstrings.
+    - rewritting code to solve a task you have already solved in another function
+    - getting a warning from the chekcer that ypou function a too long
+    - getting a warning from the chekcer that ypou function has too many nested blocks or too many branches
+    - realizing that your function can be broke down into smaller sub-problems(witha helper function for each)
+    -- if it take an open file as an argument
+        - you donot need write any example in that functions docstring.
+        - otherwise add at least two examples in the docstring.
+- for each functions (except that of file reading in task1)
+    - write at least two examples in the docstring.
+- for testing
+    - use sample_data given
+    - use city dictionary
+- function should not mutate their arguments unless told.
+
+Assuptions
+    - name and id are unique.
+    - in all task except Taks 1, the dictionary parameter will have both hypertension and low income data for every h=neighbourhoods. That is, it will be a valid CityData dictionary.
+    - donot round float data if any instead of int.
+
+Using constants
+- read from the files first row and assign constants to CityData dictionary.
+- you can add other constants if you want.
